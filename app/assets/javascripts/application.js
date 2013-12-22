@@ -23,5 +23,3 @@
 
 // for more details see: http://emberjs.com/guides/application/
 SimpleChat = Ember.Application.create();
-
-//= require_tree .

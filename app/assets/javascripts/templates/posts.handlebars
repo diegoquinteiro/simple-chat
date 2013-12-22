@@ -3,14 +3,16 @@
     <h1>Simple Chat</h1>
     <p>A simple chat app in rails</p>
     <form>
-      <textarea class="form-control" placeholder="Type a message...."></textarea>
+      {{textarea class='form-control' id="new-todo" placeholder="Type a message..." value=text action="createPost"}}
     </form>
   </div>
 </div>
 <div class="container">
+  {{#each}}
   <div class="row">
     <div class="col-md-12">
-      <div class="well"><p></p></P><strong>Sample User:</strong> sample message</p></div>
+      <div class="well"><p></p></P><strong>{{user.name}}</strong> {{text}}</p></div>
     </div>
   </div>
+  {{/each}}
 </div>

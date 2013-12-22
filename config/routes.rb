@@ -1,5 +1,6 @@
 SimpleChat::Application.routes.draw do
-  resource :posts
+  resources :posts
+  resources :users
   
   root :to => 'static#index'
 

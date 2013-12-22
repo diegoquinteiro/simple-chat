@@ -4,8 +4,14 @@ class PostsController < ApplicationController
     respond_with Post.order("created_at DESC").limit(100)
   end
 
+  def show
+    respond_with Post.find(params[:id])
+  end
+
   def create
-    respond_with Post.create(post_params)
+    params = post_params
+    params[:user_id] = 1
+    respond_with Post.create(params)
   end
 
   private

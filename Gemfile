@@ -25,8 +25,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'ember-rails'
+gem 'ember-source', '1.2.0' # or the version you needg
+gem 'ember-data-source', '1.0.0.beta.4' # or the version you needg
 
 gem 'bootstrap-sass', '~> 3.0.3.0'
+
+gem 'active_model_serializers'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
