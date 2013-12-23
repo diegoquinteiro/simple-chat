@@ -20,8 +20,6 @@ SimpleChat.PostsRoute = Ember.Route.extend({
 		this.pollster.stop();
 	},
 	model: function () {
-		var now = Date.now();
-		this.last_request = now - (now % 1000)
 		return this.store.find("post");
 	}
 });
