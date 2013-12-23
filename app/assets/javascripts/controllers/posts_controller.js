@@ -13,6 +13,12 @@ SimpleChat.PostsController = Ember.ArrayController.extend({
 			this.set("text", "");
 
 			post.save();
+		},
+		logout: function () {
+			var controller = this;
+			Ember.$.get("/logout", function () {
+				controller.set('session', null);
+			});
 		}
 	},
 	sortProperties: ['createdAt'],

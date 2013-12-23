@@ -1,9 +1,16 @@
 <div class="container">
   <div class="jumbotron">
-    <h1>Simple Chat</h1>
-    <p>A simple chat app in rails</p>
+    {{#if session.user}}
+      <p class='text-right'>Olá, {{session.user.name}}! - <a class='btn btn-sm btn-danger' {{action 'logout'}}><i class='fa fa-sign-out'></i> Sair</a></p>
+    {{/if}}
     <form>
-      {{textarea class='form-control' id="new-todo" placeholder="Type a message..." value=text action="createPost"}}
+    {{#if session.user}}
+      {{textarea class='form-control' id="new-todo" placeholder="Digite uma mensagem e aperte [Enter]" value=text action="createPost"}}
+    {{else}}
+      <h1>Chat</h1>
+      <p>Entre com seu Facebook para conversar!</p>
+      <a href='/auth/facebook' class='btn btn-primary'><i class='fa fa-facebook'></i> Entrar com Facebook</a>
+    {{/if}}
     </form>
   </div>
 </div>
@@ -11,7 +18,27 @@
   {{#each}}
   <div class="row">
     <div class="col-md-12">
-      <div class="well"><p></p></P><strong>{{user.name}}</strong> {{text}}</p></div>
+      {{#if user.current}}
+        <div class="panel panel-primary profile">
+          <div class="panel-heading">
+            <img {{bind-attr src="user.photo" }}>
+            <h3 class="panel-title">{{user.name}}</h3>
+          </div>
+          <div class="panel-body">
+            {{text}}
+          </div>
+        </div>
+      {{else}}
+        <div class="panel panel-success profile">
+          <div class="panel-heading">
+            <img {{bind-attr src="user.photo" }}>
+            <h3 class="panel-title">{{user.name}}</h3>
+          </div>
+          <div class="panel-body">
+            {{text}}
+          </div>
+        </div>        
+      {{/if}}
     </div>
   </div>
   {{/each}}

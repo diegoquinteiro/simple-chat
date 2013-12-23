@@ -1,7 +1,11 @@
 SimpleChat::Application.routes.draw do
   resources :posts
   resources :users
+  resources :sessions
   
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/logout', to: 'sessions#logout'
+
   root :to => 'static#index'
 
 

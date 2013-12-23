@@ -1,0 +1,9 @@
+.profile img {
+	float: left;
+	margin-right: 10px;
+	width: 37px;
+	height: 37px;
+	border-radius: 3px;
+	margin-left: -15px;
+	margin-top: -10px;
+}
