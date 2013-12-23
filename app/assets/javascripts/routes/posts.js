@@ -4,9 +4,14 @@ SimpleChat.PostsRoute = Ember.Route.extend({
 		var route = this;
 		this.pollster = SimpleChat.Pollster.create({
 	      onPoll: function() {
-	      	var newItems = route.store.find('post', { 
-	      		last_requested: controller.get('firstObject').get('createdAt').toISOString()
-	      	});
+	      	if (controller.get('firstObject')) {
+	      		var newItems = route.store.find('post', { 
+	      			last_requested: controller.get('firstObject').get('createdAt').toISOString()
+	      		});
+	      	}
+	      	else {
+	      		var newItems = route.store.find('post');
+	      	}
 	      	controller.addObjects(newItems);
 	      }
 	    });

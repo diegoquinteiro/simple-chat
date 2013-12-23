@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  caches_action :index, :cache_path => Proc.new { |c| c.params }
   before_filter :authenticate_user!, :only => [:create]
 
   respond_to :json # default to Active Model Serializers
