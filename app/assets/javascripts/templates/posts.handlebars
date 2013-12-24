@@ -19,22 +19,24 @@
   <div class="row">
     <div class="col-md-12">
       {{#if user.current}}
-        <div class="panel panel-primary profile">
-          <div class="panel-heading">
+        <div class="panel panel-danger profile row">
+          <div class="panel-heading col-md-3">
             <img {{bind-attr src="user.photo" }}>
             <h3 class="panel-title">{{user.name}}</h3>
+            <small class='time_ago'>{{timeAgo}}</small>
           </div>
-          <div class="panel-body">
+          <div class="panel-body col-md-9">
             {{text}}
           </div>
-        </div>
+        </div>    
       {{else}}
-        <div class="panel panel-success profile">
-          <div class="panel-heading">
+        <div class="panel panel-success profile row">
+          <div class="panel-heading col-md-3">
             <img {{bind-attr src="user.photo" }}>
             <h3 class="panel-title">{{user.name}}</h3>
+            <small class='time_ago'>{{timeAgo}}</small>
           </div>
-          <div class="panel-body">
+          <div class="panel-body col-md-9">
             {{text}}
           </div>
         </div>        

@@ -4,6 +4,8 @@
 	width: 37px;
 	height: 37px;
 	border-radius: 3px;
-	margin-left: -15px;
-	margin-top: -10px;
+}
+.profile .panel-body {
+	color: #666;
+	font-size: 1.2em;
 }

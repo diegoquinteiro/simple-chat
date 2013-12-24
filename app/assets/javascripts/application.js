@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require moment
+//= require moment/pt-br.js
 //= require turbolinks
-//= require jquery
 //= bootstrap
 //= require handlebars
 //= require ember
